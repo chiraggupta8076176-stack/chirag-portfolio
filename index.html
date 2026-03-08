@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chirag Gupta | Finance Automation Portfolio</title>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+transition:0.4s;
+}
+
+body.light{
+background:#f1f5f9;
+color:#111;
+}
+
+/* Glow Background */
+
+.hero::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#3b82f6,transparent);
+filter:blur(120px);
+z-index:-1;
+}
+
+/* Toggle */
+
+.toggle{
+position:fixed;
+top:15px;
+right:20px;
+background:#3b82f6;
+width:42px;
+height:42px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+z-index:1000;
+box-shadow:0 0 10px #3b82f6;
+}
+
+/* Navbar */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+padding:15px;
+z-index:500;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+}
+
+#particles{
+position:absolute;
+width:100%;
+height:100%;
+z-index:-2;
+}
+
+.hero h1{
+font-size:60px;
+letter-spacing:1px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:20px;
+}
+
+/* Buttons */
+
+.btn{
+margin-top:25px;
+padding:12px 28px;
+background:#3b82f6;
+color:white;
+border-radius:6px;
+text-decoration:none;
+margin-right:10px;
+transition:0.3s;
+}
+
+.btn:hover{
+box-shadow:0 0 15px #3b82f6;
+}
+
+/* Stats */
+
+.stats{
+display:flex;
+gap:80px;
+margin-top:50px;
+}
+
+.stat{
+text-align:center;
+}
+
+.stat h3{
+font-size:40px;
+color:#3b82f6;
+}
+
+.stat p{
+font-size:18px;
+}
+
+/* Container */
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+padding:80px 0;
+}
+
+h2{
+font-size:30px;
+margin-bottom:30px;
+border-left:4px solid #3b82f6;
+padding-left:10px;
+}
+
+/* Cards */
+
+.card{
+background:rgba(255,255,255,0.08);
+padding:25px;
+border-radius:12px;
+margin-bottom:20px;
+transition:0.3s;
+backdrop-filter:blur(10px);
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 15px rgba(59,130,246,0.6);
+}
+
+/* Grid */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+/* Tools */
+
+.tool{
+display:block;
+padding:14px;
+background:#1e293b;
+margin-bottom:10px;
+border-radius:8px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.tool:hover{
+background:#3b82f6;
+box-shadow:0 0 12px #3b82f6;
+}
+
+/* Skills */
+
+.skills{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+.skill{
+margin-bottom:20px;
+}
+
+.bar{
+background:#334155;
+height:8px;
+border-radius:5px;
+overflow:hidden;
+margin-top:5px;
+}
+
+.bar div{
+height:100%;
+background:#3b82f6;
+box-shadow:0 0 10px #3b82f6;
+}
+
+/* Contact */
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border-radius:6px;
+border:none;
+}
+
+button{
+padding:10px 20px;
+background:#3b82f6;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+box-shadow:0 0 12px #3b82f6;
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:40px;
+color:#94a3b8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<div class="toggle" onclick="toggleMode()">
+<span id="themeIcon">🌙</span>
+</div>
+
+<nav>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#tools">Tools</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#certification">Certification</a></li>
+<li><a href="#skills">Technical Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1>Chirag Gupta</h1>
+
+<p>
+Cost & Management Accountant (CMA)  
+Finance Automation • SAP • Excel VBA • Financial Reporting
+</p>
+
+<a class="btn" href="Chirag_Gupta_Resume.pdf" download>
+Download Resume</a>
+<a class="btn" href="https://www.linkedin.com/in/cma-chirag-gupta-a5a9851a1" target="_blank">
+LinkedIn</a>
+<div class="stats">
+
+<div class="stat">
+<h3>3+</h3>
+<p>Roles</p>
+</div>
+
+<div class="stat">
+<h3>250+</h3>
+<p>Tax Returns</p>
+</div>
+
+<div class="stat">
+<h3>95%</h3>
+<p>Automation</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="container" data-aos="fade-up">
+
+<h2>About Me</h2>
+
+<div class="card">
+
+Cost and Management Accountant with expertise in financial reporting, taxation, SAP ERP systems, and financial process automation. Experienced in developing Excel VBA automation tools, MIS dashboards, and AI-assisted financial solutions that streamline operations and improve decision-making.
+
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience" class="container" data-aos="fade-up">
+
+<h2>Professional Experience</h2>
+
+<div class="card">
+
+<h3>Assistant Manager – Accounts & Finance</h3>
+
+<b>Modelama Exports Pvt Ltd</b> | May 2025 – Present
+
+<ul>
+
+<li>Selected through campus recruitment for finance operations role.</li>
+<li>Manage Accounts Payable and Accounts Receivable operations.</li>
+<li>Automated 95% of payment processing workflow using Excel VBA tools.</li>
+<li>Developed AI-assisted financial tools and HTML utilities.</li>
+<li>Prepare MIS reports including Cheque-in-Hand, Open Advance and Inventory reports.</li>
+<li>Perform General Ledger review and reconciliation using SAP ERP.</li>
+<li>Coordinate with SAP development team for bug testing and custom reports.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Senior Accountant</h3>
+
+<b>ICTI Technologies Pvt Ltd / Turang Magnetics Solutions Pvt Ltd</b> | Feb 2025 – May 2025
+
+<ul>
+
+<li>Managed import/export documentation including TT transactions.</li>
+<li>Conducted variance analysis and monitored cost deviations.</li>
+<li>Handled vendor payments and ensured GST and TDS compliance.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>CMA Trainee – Taxation</h3>
+
+<b>Modern Tax Consultant</b> | 2023 – 2024
+
+<ul>
+
+<li>Filed 250+ income tax returns for individuals and businesses.</li>
+<li>Worked on capital gains, derivatives income and Section 44AD taxation.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Forensic Investigation Intern</h3>
+
+<b>Serious Fraud Investigation Office (SFIO)</b> | May 2024 – June 2024
+
+<ul>
+
+<li>Analyzed financial statements to detect irregularities and fraud indicators.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects" class="container" data-aos="fade-up">
+
+<h2>Finance Automation Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Payment Automation System</h3>
+
+Developed an automated payment workflow using Excel VBA reducing manual processing by 95%.
+
+</div>
+
+<div class="card">
+
+<h3>SAP Financial Monitoring Tools</h3>
+
+Designed customized financial tracking reports to detect mismatches in SAP transactions.
+
+</div>
+
+<div class="card">
+
+<h3>AI Assisted Finance Tools</h3>
+
+Built automation utilities using Excel, VBA, HTML and AI tools.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TOOLS -->
+
+<section id="tools" class="container" data-aos="fade-up">
+
+<h2>Automation Tools</h2>
+
+<div class="card">
+
+<a class="tool" href="#">Excel Payment Automation Tool</a>
+<a class="tool" href="#">MIS Reporting Dashboard</a>
+<a class="tool" href="#">SAP Reconciliation Monitoring Tool</a>
+<a class="tool" href="#">AI Finance Utilities</a>
+
+</div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education" class="container" data-aos="fade-up">
+
+<h2>Education</h2>
+
+<div class="card">
+
+<p><b>CMA Final (Both Groups)</b> – ICAI – 2024 – 50%</p>
+<p><b>CMA Intermediate</b> – 2023 – 56.25%</p>
+<p><b>B.Com (Honours)</b> – Delhi University – 2022 – 73.9%</p>
+<p><b>Senior Secondary</b> – CBSE – 2019 – 82.5%</p>
+
+</div>
+
+</section>
+
+<!-- CERTIFICATION -->
+
+<section id="certification" class="container" data-aos="fade-up">
+
+<h2>Certification</h2>
+
+<div class="card">
+
+AI Career Accelerator Program (AI CAP) – Batch B9W2 (Ongoing)
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills" class="container" data-aos="fade-up">
+
+<h2>Technical Skills</h2>
+
+<div class="skills">
+
+<div>
+
+<div class="skill">
+SAP ERP
+<div class="bar"><div style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+Excel VBA
+<div class="bar"><div style="width:95%"></div></div>
+</div>
+
+<div class="skill">
+Power BI
+<div class="bar"><div style="width:70%"></div></div>
+</div>
+
+</div>
+
+<div>
+
+<div class="skill">
+Financial Reporting
+<div class="bar"><div style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+MIS Reporting
+<div class="bar"><div style="width:80%"></div></div>
+</div>
+
+<div class="skill">
+Tax Compliance
+<div class="bar"><div style="width:75%"></div></div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="container" data-aos="fade-up">
+
+<h2>Contact Me</h2>
+
+<div class="card">
+
+<form>
+
+<input placeholder="Your Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button>Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Chirag Gupta | Finance Automation Portfolio
+
+</footer>
+
+<script>
+
+function toggleMode(){
+
+document.body.classList.toggle("light");
+
+let icon=document.getElementById("themeIcon");
+
+if(document.body.classList.contains("light")){
+icon.innerHTML="☀️";
+}else{
+icon.innerHTML="🌙";
+}
+
+}
+
+tsParticles.load("particles",{
+particles:{
+number:{value:60},
+size:{value:3},
+move:{speed:1},
+links:{enable:true},
+color:{value:"#3b82f6"}
+}
+});
+
+AOS.init({duration:1000});
+
+</script>
+
+</body>
+</html>
